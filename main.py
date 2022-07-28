@@ -114,7 +114,7 @@ async def verify2(callback_query: types.CallbackQuery):
         if owner_verify != 0:
             raise AssertionError
         result = json.loads(requests.get(
-            f'{TONCENTER_BASE}getTransactions?address=EQABh4JBalyRKN42tZB1jevT3BheWqHYjkhSv3zoHldqqRJs&limit=10&to_lt=0&archival=false',
+            f'{TONCENTER_BASE}getTransactions?address=EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU&limit=10&to_lt=0&archival=false',
             headers=headers).text)['result']
         is_verified = False
         for i in result:
@@ -122,7 +122,7 @@ async def verify2(callback_query: types.CallbackQuery):
             value = transaction['value']
             msg = transaction['message']
             source = transaction['source']
-            if (int(value) >= 10000000) and (msg == f"verify{callback_query.from_user.id}") and (
+            if (int(value) >= 1000000) and (msg == f"verify{callback_query.from_user.id}") and (
                     source == owner_addresses['b64url']):
                 is_verified = True
                 break
@@ -175,7 +175,7 @@ async def check_nft(msg: types.Message):
             nfts = await get_user_nfts(owner_address)
             if len(nfts) != 0 or len(contest) > 0:
                 await bot.send_message(msg.chat.id,
-                                       f'{language["send"]} <a href="http://qrcoder.ru/code/?ton%3A%2F%2Ftransfer%2FEQABh4JBalyRKN42tZB1jevT3BheWqHYjkhSv3zoHldqqRJs%3Famount%3D10000000%26text%3Dverify{msg.from_user.id}&4&0"> </a><b>0.01 TON</b>\n\n{language["from"]} <code>{owner_address}</code>\n\n{language["to"]} <code>EQABh4JBalyRKN42tZB1jevT3BheWqHYjkhSv3zoHldqqRJs</code>\n\n'
+                                       f'{language["send"]} <a href="http://qrcoder.ru/code/?ton%3A%2F%2Ftransfer%EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU%3Famount%3D1000000%26text%3Dverify{msg.from_user.id}&4&0"> </a><b>0.001 TON</b>\n\n{language["from"]} <code>{owner_address}</code>\n\n{language["to"]} <code>EQBondcvD2_aOFADXSWJHs4ZazQDuEl9_wNvGGPxI8hGuOFU</code>\n\n'
                                        f'{language["comment"]} <code>verify{msg.from_user.id}</code>\n\n{language["scan_qr"]}',
                                        parse_mode=ParseMode.HTML,
                                        reply_markup=InlineKeyboardMarkup().add(
