@@ -74,3 +74,4 @@ async def get_user_nfts(address):
         except:
             pass
     return nfts
+    
