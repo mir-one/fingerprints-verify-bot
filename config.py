@@ -32,14 +32,14 @@ TONCENTER_BASE = 'https://toncenter.com/api/v2/'
 headers = {
     'cookie': 'csrftoken=vO44viQbEDlbcKiLz56aaE8tLmjzc5XtVqUTZo6zgItxRNehF7VRGlCVdQR3dul9',
     'x-csrftoken': 'vO44viQbEDlbcKiLz56aaE8tLmjzc5XtVqUTZo6zgItxRNehF7VRGlCVdQR3dul9',
-    'referer': 'https://getgems.io/collection/EQATbIOeT9ziq7Jf76dJlnWIAiZggY2TeDteAh46D4QICBZj/',
+    'referer': 'https://beta.disintar.io/object/',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0'}
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 english = json.loads(open('en.json', 'r').read())
-english['my_nft'] = f'have passed <a href="tg://user?id={BOT_ID}">verification</a>. This is my Fingerprint:'
+english['my_nft'] = f'have passed <a href="tg://user?id={BOT_ID}">verification</a>. This is my NFT:'
 
 russian = json.loads(open('ru.json', 'rb').read())
-russian['my_nft'] = f'прошёл <a href="tg://user?id={BOT_ID}">верификацию</a>. Это мой Fingerprint:'
+russian['my_nft'] = f'прошёл <a href="tg://user?id={BOT_ID}">верификацию</a>. Это мой NFT:'
