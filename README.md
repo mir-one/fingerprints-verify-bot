@@ -9,7 +9,7 @@
 4. Bot sends a link to a private chat
 
 ## How to run bot
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mir-one/verify_dao/tree/main)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mir-one/fingerprints-verify-bot/tree/main)
 
 ### .env variables
 
